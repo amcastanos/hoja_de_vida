@@ -33,7 +33,7 @@
 
         .header {
             text-align: center;
-            padding: 40px 0;
+            padding: 40px 20px;
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
             border-radius: 15px;
@@ -46,10 +46,35 @@
             font-weight: 300;
         }
 
+        .profile-photo {
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-photo img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.8);
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            background: white;
+            padding: 3px;
+        }
+
+        .profile-photo img:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
         .header .subtitle {
             font-size: 1.4rem;
             opacity: 0.9;
             font-weight: 300;
+            margin-bottom: 20px;
+            padding: 0 10px;
         }
 
         .contact-info {
@@ -58,12 +83,68 @@
             flex-wrap: wrap;
             gap: 30px;
             margin-top: 20px;
+            padding: 0 10px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
             gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 30px 15px;
+                margin: 10px;
+                border-radius: 10px;
+            }
+
+            .header h1 {
+                font-size: 2.2rem;
+                margin-bottom: 15px;
+            }
+
+            .header .subtitle {
+                font-size: 1.1rem;
+                line-height: 1.4;
+                margin-bottom: 25px;
+            }
+
+            .profile-photo img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+
+            .contact-item {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 25px 10px;
+                margin: 5px;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .header .subtitle {
+                font-size: 1rem;
+            }
+
+            .profile-photo img {
+                width: 100px;
+                height: 100px;
+            }
         }
 
         .section {
@@ -316,27 +397,226 @@
             animation-delay: 0.4s;
         }
 
-        .profile-photo {
-            margin-bottom: 25px;
-            display: flex;
-            justify-content: center;
+        /* Power BI Style Charts */
+        .powerbi-container {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #e9ecef;
         }
 
-        .profile-photo img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid rgba(255, 255, 255, 0.8);
-            object-fit: cover;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .chart-card {
             background: white;
-            padding: 3px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e1e5e9;
         }
 
-        .profile-photo img:hover {
-            transform: scale(1.08);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        .chart-title {
+            color: #323130;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #0078D4;
+            padding-bottom: 8px;
+        }
+
+        /* Bar Chart */
+        .bar-chart {
+            padding: 10px 0;
+        }
+
+        .bar-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            gap: 15px;
+        }
+
+        .bar-label {
+            width: 100px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #605e5c;
+        }
+
+        .bar-container {
+            flex: 1;
+            height: 24px;
+            background: #f3f2f1;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: 12px;
+            transition: width 2s ease-in-out;
+            position: relative;
+        }
+
+        .powerbi-bar {
+            background: linear-gradient(90deg, #0078D4, #106EBE);
+        }
+
+        .sql-bar {
+            background: linear-gradient(90deg, #40E0D0, #00CED1);
+        }
+
+        .python-bar {
+            background: linear-gradient(90deg, #107C10, #0B6A0B);
+        }
+
+        .metabase-bar {
+            background: linear-gradient(90deg, #FF6B35, #E55A2B);
+        }
+
+        .bar-value {
+            width: 60px;
+            text-align: right;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #323130;
+        }
+
+        /* Pie Chart */
+        .pie-chart {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .pie-svg {
+            width: 160px;
+            height: 160px;
+        }
+
+        .pie-slice {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            transform-origin: center;
+        }
+
+        .pie-slice:hover {
+            transform: scale(1.05);
+        }
+
+        .pie-legend {
+            flex: 1;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #605e5c;
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+            margin-right: 8px;
+        }
+
+        /* KPI Section */
+        .kpi-section {
+            margin-top: 20px;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .kpi-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .kpi-primary {
+            border-left-color: #0078D4;
+        }
+
+        .kpi-success {
+            border-left-color: #107C10;
+        }
+
+        .kpi-info {
+            border-left-color: #40E0D0;
+        }
+
+        .kpi-warning {
+            border-left-color: #FF8C00;
+        }
+
+        .kpi-icon {
+            font-size: 2rem;
+            opacity: 0.8;
+        }
+
+        .kpi-content {
+            flex: 1;
+        }
+
+        .kpi-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #323130;
+            line-height: 1.2;
+        }
+
+        .kpi-label {
+            font-size: 0.85rem;
+            color: #605e5c;
+            margin: 2px 0;
+        }
+
+        .kpi-trend {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .kpi-trend.positive {
+            color: #107C10;
+        }
+
+        @media (max-width: 768px) {
+            .chart-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pie-chart {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .kpi-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
